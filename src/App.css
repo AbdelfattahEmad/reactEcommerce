@@ -36,3 +36,163 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+.img-style-one {
+  height: 50px;
+  width: 92px;
+  border-radius: 46px; }
+
+
+.img-style-two{
+  margin-left: 10px;
+  height: 35px;
+  width: 33px;
+}
+
+/*SubTitle*/
+.sale-more {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*category imgs */
+
+.img-category {
+  width: 156px;
+  height: 200px;
+  border-radius: 80px;
+}
+
+
+/*offers*/
+.dis-sec{
+  margin: 20px;
+  text-align: center;
+  background-color: black;
+  color: white;
+
+}
+
+/*Brand*/
+
+.img-brand {
+  width: 183px;
+  height: 171px;
+  border-radius: 52%;
+
+}
+
+.p-brand{
+  text-align: center;
+  margin: 5px;
+
+}
+
+/*footer*/
+
+
+ .foot-h{height: 40px;
+}
+
+/*Home Category*/
+  .cat-header{
+    background-color: #eee;
+    color: #9792a1;
+
+  }
+
+  /*Descreption product*/
+
+  .Desc-products{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 5px;
+
+  }
+
+  /*Rate*/
+
+ .Rate-comment{
+  background-color: #f6f5fa;
+  box-shadow: -1px 4px 3px 0px;
+  border-radius: 5px;
+  height: 300PX;
+
+
+}
+
+
+  /*Cart Page*/
+.Cart-logo{
+  margin: 10px;
+  font-size: 17px;
+  font-weight: 500;
+
+}
+
+  /*Cart item*/
+
+ .Cart-item{
+    margin-top: 60px;
+    margin-left: 25px;
+}
+
+.cartContainer{
+  background-color: #fdfcfb;
+  border-radius: 20px;
+}
+
+.div-cart{
+  background-color: #eee;
+  border-radius: 60px;
+  margin: 10px 37px;
+}
+
+
+
+  /*radio*/
+  .radio-point{
+    background-color: #eee;
+    padding: 15px 25px;
+    border-radius: 45px;
+    text-align: center;
+  }
+
+
+
+
+  /*SideBar*/
+ .Sidebar{
+    background-color: #eee;
+    width: 200px;
+    height: 500px;
+    border: 1px solid white;
+
+  }
+
+  .side-div{
+    border: 1px solid #d4d3db;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+  }
+
+  .side-div:hover{
+   background-color: #282c34;
+   color: #d4d3db;
+  }
+  .side{
+    font-size: 15px;
+    font-weight: 500;
+
+  }
+
+   .img-aboda{
+    width: 200px;
+    border-radius: 20%;
+
+  }
