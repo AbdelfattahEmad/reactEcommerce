@@ -6,10 +6,10 @@ function DiscountSection({img}){
         <Container>
             <SubTitle/>
             <div className="d-flex align-items-center justify-content-around my-5">
-                <Col sm-6>
+                <Col sm="6">
                 <h1>30% off devices</h1>
                 </Col>
-                <Col sm-6>
+                <Col sm="6">
                 <img src={img}/>
                 </Col>
                 

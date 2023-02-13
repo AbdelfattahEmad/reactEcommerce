@@ -1,34 +1,64 @@
-
 import Form from 'react-bootstrap/Form';
-import empty from "../images/empty.png"
-import { Button } from 'react-bootstrap';
-
+import { Button, Spinner } from 'react-bootstrap';
+import { ToastContainer} from 'react-toastify';
+import AddCategoryHook from '../../HOOKS/CategoryHooks/addCategoryHook';
+import { useEffect } from 'react';
 
 const AddSubCategory=()=>{
+
+
+  const [handleSubmit,onImageChange, img,name,SelectedFile,loading,isPress ,onChangeName,btnDisable] = AddCategoryHook();
+  
     return(
         <div>
-        <img src={empty}  className='my-3'/>
-        <Form.Control
+          <div>
+            <label htmlFor="upload-photo">
+            <img src={img} 
+            alt='fzx'
+            height="100px"
+            width="120px"
+            style={{cursor : "pointer"}}
+             className='my-3'
+             />
+            </label>
+
+            <input
+            type="file"
+            name="photo"
+            onChange={onImageChange}
+            id="upload-photo"
+            />
+          </div>
+
+
+        <Form.Control 
          className='my-3'
+         onChange={onChangeName}
         type="text"
         id="inputPassword5"
         placeholder='Descreption'
         aria-describedby="passwordHelpBlock"
+        value={name}
+
       />
 
-        <Form.Select  className='my-3'>
-        <option>First rating</option>
-        <option>second rating</option>
-        <option>third rating</option>
-        <option>Fourth rating </option>
 
-      </Form.Select>
+        <div>
+        <Button disabled={btnDisable} variant="primary"onClick={handleSubmit}>Save</Button>
+        </div>
 
-      <Button variant="primary">Enter</Button>{' '}
+      {
 
+        isPress ? loading? 
+        (<Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>):(<h4>finshed</h4>) :null  
+      }
+          <ToastContainer />
       </div>
 
-    )
+
+    );
 
 }
 export default AddSubCategory

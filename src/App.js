@@ -6,7 +6,7 @@ import FooterSection from './Components/pages/FooterSection';
 import LoginPage from './Components/login/LoginPages';
 import RegisterPage from "./Components/login/RegisterPage"
 import AllCategory from './Components/SubPages/AllCategoryPage';
-import AllBrands from './Components/SubPages/AllBrands';
+import AllBrands from './Components/Brands/AllBrands';
 import ShopProducts from './Components/Products/ShopProducts';
 import ProductDetailsPage from './Components/Products/ProductDetailsPage';
 import CartPage from './Components/Cart/CartPage';
@@ -14,7 +14,7 @@ import  PayMethod  from './Components/Cart/paymentMethod';
 import AdminAllProductPage from './Components/Admin/AdminAllProductPage';
 import AllOrdersPage from './Components/Admin/AllOrderPage';
 import AddCategoryPage from './Components/Admin/AddCategoty';
-import AdminAddBrandPage from './Components/Admin/AdminAddBrand';
+import AdminAddBrandPage from './Components/Brands/AdminAddBrand';
 import AdminAddProductPage from './Components/Admin/AdminAddProduct';
 import AdminSubCat from './Components/Admin/AdminSubCat';
 import UserAllProductPage from './Components/User/UserAllProductPage';
@@ -53,25 +53,6 @@ function App() {
         <Route path="/admin/Profile" element={<ProfileUser/>}/>
 
 
-       
-
-
-       
-
-
-
-       
-
-
-
-
-
-
-        
-
-
-
-        
       </Routes>
       </BrowserRouter>
       <FooterSection/>

@@ -10,7 +10,7 @@ const PaginationPage = () => {
             onPageChange={handlePageClick}
             marginPagesDisplayed={2}
             pageRangeDisplayed={2}
-            pageCount={100}
+            pageCount={10}
             previousLabel="Previous"
             containerClassName={"pagination justify-content-center p-3"}
             pageClassName={"page-item"}

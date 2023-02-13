@@ -13,9 +13,7 @@ function NavbarLogin() {
     <Navbar bg="light" expand="lg">
       <Container >
         <Navbar.Brand href="#">
-          <a href='/'>
           <img src={qqq} className="img-style-one"/>
-          </a>
       </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

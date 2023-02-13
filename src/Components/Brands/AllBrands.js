@@ -1,5 +1,5 @@
 import { Container} from "react-bootstrap";
-import BrandContainer from "../ContainerPages/BrandContainer";
+import BrandContainer from "../Brands/BrandContainer";
 import PaginationPage from "../Pagination/Paginations";
 
 const AllBrands=()=>{

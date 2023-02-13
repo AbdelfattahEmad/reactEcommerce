@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import { Col } from "react-bootstrap";
 
-function CategoryCart({ img , title}){
+function CategoryCart({img,title}){
+
+    useEffect(()=>{
+        console.log( img , title)
+    },[])
     return (
         <Col xs="6"
         sm="6"
@@ -10,6 +15,7 @@ function CategoryCart({ img , title}){
             <div className="">
                 <img className="img-category" src={img}/>
                 <p>{title}</p>
+             
             </div>
         </Col>
 

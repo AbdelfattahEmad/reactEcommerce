@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap"
-import AdminSidebar from "./AdminSidebar"
+import AdminSidebar from "../Admin/AdminSidebar"
 import AddBrand from "./AddBrand"
 import PaginationPage from "../Pagination/Paginations"
 

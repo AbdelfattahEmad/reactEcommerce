@@ -196,3 +196,10 @@
     border-radius: 20%;
 
   }
+
+  /*upload-photo*/
+  #upload-photo {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
