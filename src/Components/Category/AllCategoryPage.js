@@ -1,6 +1,6 @@
 import { Container} from "react-bootstrap";
 import PaginationPage from "../Pagination/Paginations";
-import CategoryContainer from "../ContainerPages/CategorysContainer";
+import CategoryContainer from "../Category/CategorysContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import getCategoryAction from "../../Redux/Actions/CategoryAction"; 

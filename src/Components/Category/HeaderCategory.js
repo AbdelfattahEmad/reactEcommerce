@@ -1,5 +1,4 @@
 import { Col, Container, Row } from "react-bootstrap";
-import SubTitle from "./subtitle";
 
 const HeaderCategory =()=>{
     return(

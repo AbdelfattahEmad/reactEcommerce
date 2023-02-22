@@ -48,15 +48,15 @@ const AdminSidebar=()=>{
         <div className="d-flex flex-column side-div">
         <Link to="/admin/addProduct" style={{textDecoration :"none"}}>
         <div className="side">
-            Add a product
+            Add special product 
             </div>
         </Link>
         </div>
 
         <div className="d-flex flex-column side-div">
-        <Link to="/admin" style={{textDecoration :"none"}}>
+        <Link to="/Sp/admin" style={{textDecoration :"none"}}>
         <div className="side">
-             orders
+            Add Some prouducts
             </div>
         </Link>
         </div>

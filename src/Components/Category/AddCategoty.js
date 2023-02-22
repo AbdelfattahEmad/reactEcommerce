@@ -1,9 +1,9 @@
 import { Col, Container, Row } from "react-bootstrap"
-import AdminSidebar from "./AdminSidebar"
+import AdminSidebar from "../Admin/AdminSidebar"
 import PaginationPage from "../Pagination/Paginations"
-import AddSubCategory from "../Category/AddSubCategory"
+import CartItem from "../Cart/CartItem"
 
-const AdminSubCat=()=>{
+const AddCategoryPage=()=>{
     return(
         <Container>
         <Row className="py-3">
@@ -12,7 +12,7 @@ const AdminSubCat=()=>{
             </Col>
 
             <Col  sm="9" xs="10" md="10">
-                <AddSubCategory/>
+                <CartItem/>
             </Col>
             <PaginationPage/>
 
@@ -22,4 +22,4 @@ const AdminSubCat=()=>{
 
     )
 }
- export default  AdminSubCat
+ export default  AddCategoryPage

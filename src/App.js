@@ -5,7 +5,7 @@ import NavbarLogin from './Components/Home/NavbarLogin';
 import FooterSection from './Components/pages/FooterSection';
 import LoginPage from './Components/login/LoginPages';
 import RegisterPage from "./Components/login/RegisterPage"
-import AllCategory from './Components/SubPages/AllCategoryPage';
+import AllCategory from './Components/Category/AllCategoryPage';
 import AllBrands from './Components/Brands/AllBrands';
 import ShopProducts from './Components/Products/ShopProducts';
 import ProductDetailsPage from './Components/Products/ProductDetailsPage';
@@ -13,15 +13,18 @@ import CartPage from './Components/Cart/CartPage';
 import  PayMethod  from './Components/Cart/paymentMethod';
 import AdminAllProductPage from './Components/Admin/AdminAllProductPage';
 import AllOrdersPage from './Components/Admin/AllOrderPage';
-import AddCategoryPage from './Components/Admin/AddCategoty';
+import AddCategoryPage from './Components/Category/AddCategoty';
 import AdminAddBrandPage from './Components/Brands/AdminAddBrand';
 import AdminAddProductPage from './Components/Admin/AdminAddProduct';
+
 import AdminSubCat from './Components/Admin/AdminSubCat';
 import UserAllProductPage from './Components/User/UserAllProductPage';
 import AddUserProduct from './Components/User/AddUserProduct';
 import AllFavorateProduct from './Components/User/AllFavorateProduct';
 import PersonalData from './Components/User/PersonalData';
 import ProfileUser from './Components/User/profileUser';
+import AdminAddProductPages from './Components/Admin/AddPoroudctspages';
+
 
 
 
@@ -51,8 +54,7 @@ function App() {
         <Route path="/admin/Fav" element={< AllFavorateProduct/>}/>
         <Route path="/admin/personal" element={<PersonalData/>}/>
         <Route path="/admin/Profile" element={<ProfileUser/>}/>
-
-
+        <Route path="/Sp/admin" element={<AdminAddProductPages/>}/>
       </Routes>
       </BrowserRouter>
       <FooterSection/>

@@ -2,7 +2,6 @@ import Form from 'react-bootstrap/Form';
 import { Button, Spinner } from 'react-bootstrap';
 import { ToastContainer} from 'react-toastify';
 import AddCategoryHook from '../../HOOKS/CategoryHooks/addCategoryHook';
-import { useEffect } from 'react';
 
 const AddSubCategory=()=>{
 

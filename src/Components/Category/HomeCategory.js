@@ -1,6 +1,6 @@
 import { Container, Row } from "react-bootstrap";
 import SubTitle from "../Home/subtitle";
-import CategoryCart from "../Home/CategoroyCart";
+import CategoryCart from "../Category/CategoroyCart";
 import { useEffect } from "react";
 import getCategoryAction from "../../Redux/Actions/CategoryAction";
 import { useDispatch, useSelector } from "react-redux";

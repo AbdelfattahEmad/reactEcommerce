@@ -1,69 +1,48 @@
 import Form from 'react-bootstrap/Form';
-import empty from "../images/empty.png"
-import { Button } from 'react-bootstrap';
+import { Button} from 'react-bootstrap';
+import { ToastContainer} from 'react-toastify';
+import  AddSubCategoryHook  from '../../HOOKS/subCategory/addSubCategoryHook';
+
 
 const AddProduct =()=>{
+
+
+  const  [id,name,loading,category,subCategory,handelChange,handelSubmit,onChangeName]=AddSubCategoryHook()
+
+ 
+  console.log(category)
+
+
     return(
 
-<div className="">
-    <img src={empty} />
-    <div>
-    <Form.Control
-        type="text"
-        id="inputPassword5"
-        aria-describedby="passwordHelpBlock"
-        placeholder='Product Name'
-        className='my-4'
-      />
-          <Form.Control
-        type="text"
-        id="inputPassword5"
-        aria-describedby="passwordHelpBlock"
-        placeholder='Add Descreption for Product'
-        className='my-4'
-      />
+        <div className="">
+              <div>
+                  <h2>Add a new subcategory</h2>
+                  <Form.Control
+                      type="text"
+                      id="inputPassword5"
+                      aria-describedby="passwordHelpBlock"
+                      placeholder='Classification name'
+                      className='my-4'
+                      value={name}
+                      onChange={(e)=> onChangeName(e.target.value)}
 
-<Form.Control
-        type="text"
-        id="inputPassword5"
-        aria-describedby="passwordHelpBlock"
-        placeholder='price before discount'
-        className='my-4'
-      />
+                    />
+                      <Form.Select  name="category" id="cat" className='my-3' onChange={handelChange}>
+                        <option value="0">Choose a subcategory</option>
+                      {
+                        category.length > 0 ? (category.map((item)=>{return(<option key={item.id}>{item.name}</option>)})) : null
+                      }
+                        
+                    
 
-<Form.Control
-        type="text"
-        id="inputPassword5"
-        aria-describedby="passwordHelpBlock"
-        placeholder=' price after discount'
-        className='my-4'
-      />
+                      </Form.Select>
+                  </div>
 
+                   <Button onClick={handelSubmit} variant="primary">Enter</Button>{' '}
+                   <ToastContainer/>
 
-<Form.Select  className='my-3'>
-<option>Add a Brand</option>
-        <option>First Brand</option>
-        <option>second Brand</option>
-        <option>third Brand</option>
-        <option>Fourth Brand </option>
-      </Form.Select>
-
-      <Form.Select  className='my-3'>
-      <option>ِAdd rating</option>
-        <option>First rating</option>
-        <option>second rating</option>
-        <option>third rating</option>
-        <option>Fourth rating </option>
-
-      </Form.Select>
-
-
-    </div>
-
-<Button variant="primary">Enter</Button>{' '}
-
-
-</div>
+        </div>
 
     )
 

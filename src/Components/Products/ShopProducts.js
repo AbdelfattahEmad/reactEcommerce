@@ -1,7 +1,7 @@
 import { Container} from "react-bootstrap";
 import DropDown from "../Home/DropDown";
-import HeaderCategory from "../Home/HeaderCategory";
-import CategoryContainer from "../ContainerPages/CategorysContainer";
+import HeaderCategory from "../Category/HeaderCategory";
+import CategoryContainer from "../Category/CategorysContainer";
 import PaginationPage from "../Pagination/Paginations";
 
 

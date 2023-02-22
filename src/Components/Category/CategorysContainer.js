@@ -1,5 +1,5 @@
 import { Container, Row } from "react-bootstrap"
-import CategoryCart from "../Home/CategoroyCart";
+import CategoryCart from "../Category/CategoroyCart";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import getCategoryAction from "../../Redux/Actions/CategoryAction";

@@ -10,6 +10,9 @@ export const GET_ERROR ="GET_ERROR"
 export const GET_ALL_BRAND ="GET_ALL_BRAND"
 export const CREATE_BRAND ="CREATE_BRAND"
 
+// SUb CAtegory 
+export const CREATE_SUB_CATEGORY = "CREATE_SUB_CATEGORY" 
+
 
 
 

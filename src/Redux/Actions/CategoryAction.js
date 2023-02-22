@@ -5,7 +5,7 @@ import {useInsertDataWithImg} from "../../HOOKS/insertData";
 
 
 // get All Category 
-const getCategoryAction  = () =>  async(dispatch) => {
+const getCategoryAction =()=>  async(dispatch) => {
     try {
        const response = await baseUrl.get("categories");
        dispatch({

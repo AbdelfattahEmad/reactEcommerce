@@ -5,6 +5,8 @@ import PaginationPage from "../Pagination/Paginations";
 const AllBrands=()=>{
     return(
         <Container>
+            <div className="my-3">All Brands</div>
+            
            <BrandContainer/>
            <PaginationPage/>
         </Container>

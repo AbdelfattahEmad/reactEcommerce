@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import  notify  from './UseNotifiction';
+
 import empty from "../../Components/images/empty.png"
 import {createBrand } from '../../Redux/Actions/BrandAction';
+import notify from '../CategoryHooks/UseNotifiction';
 
 
 
@@ -33,11 +34,10 @@ const AddBrandHook=()=>{
   
     }
   
-    const brand= useSelector(state => state.allBrand.brand)
-  
-    
+    const res = useSelector(state => state.AllBrand.brand)
+
     //save data
-    const handleSubmit = async(event) => {
+    const handleSubmit = async(event)=> {
       event.preventDefault();
 
       if (name === "" || SelectedFile === null){
@@ -64,11 +64,10 @@ const AddBrandHook=()=>{
         if(loading === false){
           setImg(empty)
           setName("")
-          setSelectedFile()
+          setSelectedFile(null)
           console.log( "finshed")
           setLoading(true)
-          setTimeout(()=>{
-            setIsPress(false)
+          setTimeout(()=>setImg(false), 1000 )
             if(res.status === 201) {
               notify("Added successfully" ,"success");
               setImg(empty);
@@ -80,11 +79,12 @@ const AddBrandHook=()=>{
               setImg(empty);
               setBtnDisable(true);
             }
-          },2000)
+          
         }
       },[loading])
       
     return [handleSubmit,onImageChange, img,name,SelectedFile,loading,isPress ,onChangeName,btnDisable]
+
 
 };
 export default AddBrandHook

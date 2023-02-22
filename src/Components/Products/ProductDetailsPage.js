@@ -1,8 +1,7 @@
 import { Container } from "react-bootstrap"
-import HeaderCategory from "../Home/HeaderCategory"
+import HeaderCategory from "../Category/HeaderCategory"
 import ProductDetails from "./ProductDetails"
 import RatesContainer from "../Rates/RatesContainer"
-import ProductCard from "../Home/ProductCard"
 
 const ProductDetailsPage =()=>{
     return(

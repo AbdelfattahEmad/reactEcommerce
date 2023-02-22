@@ -15,7 +15,7 @@ const BrandContainer =()=>{
 
        {
                 loading === false ? (
-                brand.data.length ? (brand.data.map((item,index)=>{
+                brand.length ? (brand.map((item,index)=>{
                     return <BrandCard title={item.title} img={item.image} data={brand} key={index} />
                 })
 

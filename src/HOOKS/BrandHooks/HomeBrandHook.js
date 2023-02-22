@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import getAllBrand from "../../Redux/Actions/BrandAction";
 
-const HomeBrandHook=()=>{
+ const HomeBrandHook=()=>{
 
     
     const dispatch = useDispatch()
