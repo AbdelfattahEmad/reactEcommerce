@@ -7,8 +7,7 @@ import Spinner from 'react-bootstrap/Spinner';
 
 function BrandFeture({img}){
 
-     const [brand,loading] = HomeBrandHook()
-     console.log("brand" , brand)
+const [brand,loading] = HomeBrandHook()
 
     return(
         <Container className="d-flex">

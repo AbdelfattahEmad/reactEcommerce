@@ -4,7 +4,7 @@ import { Col } from "react-bootstrap";
 function CategoryCart({img,title}){
 
     useEffect(()=>{
-        console.log( img , title)
+        
     },[])
     return (
         <Col xs="6"

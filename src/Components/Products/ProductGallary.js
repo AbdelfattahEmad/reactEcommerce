@@ -1,29 +1,18 @@
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from 'react-image-gallery';
-import jak from "../images/jak.webp"
+import { useParams } from "react-router-dom";
+import ViewProductDetailssHook from "../../HOOKS/productHooks/view-product-details-hook";
 
 const ProductGallary=()=>{
 
-    const images = [
-        {
-          original:`${jak}`
-     
-        },
-        {
-          original: `${jak}`
-        
-        },
-        {
-          original: `${jak}`
-          
-        },
-      ];
-      
+  const [id] = useParams()
+  const [item , images] =ViewProductDetailssHook(id)
+
+
     return(
 
      <div>
         <ImageGallery items={images} 
-        defaultImage={jak}
         showFullscreenButton={false}
         showPlayButton={false}
         />

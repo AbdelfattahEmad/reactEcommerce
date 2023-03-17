@@ -31,7 +31,6 @@ const AddBrandHook=()=>{
           setImg(URL.createObjectURL(event.target.files[0]))
           setSelectedFile(event.target.files[0])
       }
-  
     }
   
     const res = useSelector(state => state.AllBrand.brand)
@@ -55,7 +54,6 @@ const AddBrandHook=()=>{
       await dispatch(createBrand(formData))
     
       setLoading(false)
-      
       } 
   
     }

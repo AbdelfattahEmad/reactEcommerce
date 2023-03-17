@@ -1,12 +1,17 @@
 import { Container } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
+import ViewSearchProductsHook from '../../HOOKS/productHooks/viewSearchHook';
 
 const DropDown =()=>{
+
+  const [AllProduct] = ViewSearchProductsHook()
+
+
     return(
 
     <Container>
-<div className="sale-more my-2">
-    <div className="sales">Search Result</div>
+  <div className="sale-more my-2">
+    <div className="sales">search result</div>
     <div className="">
     <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic">

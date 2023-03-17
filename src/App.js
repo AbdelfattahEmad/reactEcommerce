@@ -16,7 +16,6 @@ import AllOrdersPage from './Components/Admin/AllOrderPage';
 import AddCategoryPage from './Components/Category/AddCategoty';
 import AdminAddBrandPage from './Components/Brands/AdminAddBrand';
 import AdminAddProductPage from './Components/Admin/AdminAddProduct';
-
 import AdminSubCat from './Components/Admin/AdminSubCat';
 import UserAllProductPage from './Components/User/UserAllProductPage';
 import AddUserProduct from './Components/User/AddUserProduct';

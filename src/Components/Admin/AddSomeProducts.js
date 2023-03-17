@@ -1,44 +1,15 @@
-import empty from '../images/empty.png'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import MultiImageInput from 'react-multiple-image-input';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import getCategoryAction from '../../Redux/Actions/CategoryAction'
+import { ToastContainer } from 'react-toastify';
+import addProductHook from '../../HOOKS/productHooks/productHooks';
 
 
 const AddSomeProducts =()=>{
 
-
-
-const category = useSelector(state => state.AllCategory.category)
-
-if(category){
-    console.log(category)
-}
-
-const dispatch = useDispatch()
-    useEffect(()=>{
-        dispatch(getCategoryAction());
-    },[])
-
-
-
-
-    
-// value image product 
-    const [images, setImages] = useState({})
-
-    //forms state
-    const [proName, setproName] = useState("")
-    const [proDescreption, setProDescreption] = useState("")
-    const [priceBefore, setPriceBefore] = useState("")
-    const [priceAfter, setPriceAfter] = useState("")
-    const [rating, setRating] = useState()
-    const [quant, setQuant] = useState()
-
-    
-
+    const [onChangeDescrep,onChangeProName ,onChangePricePefore,onChangePricAfter,onChangeQuantati,loading,
+        Products ,images,setImages,proName ,setproName,proDescreption,setProDescreption,priceAfter,setPriceAfter,
+        priceBefore,setPriceBefore,quant,setQuant ,rating,setRating,category,handelSubmit ]= addProductHook()
 
 
     return(
@@ -59,38 +30,43 @@ const dispatch = useDispatch()
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Control type="email" placeholder="Product Name"
                             value={proName}
-                            onChange={(e) => setproName(e.target.value)}
+                            onChange={onChangeProName}
                              />
-
                         </Form.Group>
+
+
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                             <Form.Control as="textarea" rows={3} placeholder="product Descreption"
                             value={proDescreption}
-                             onChange={(e) => setProDescreption(e.target.value)}
+                             onChange={onChangeDescrep}
                             
                             />
                         </Form.Group>
+
+
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            <Form.Control type="email" placeholder="price Before Descount"
+                             value={priceBefore}
+                            onChange={onChangePricePefore}
+                                
+                            />
+                        </Form.Group>
+
                         
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Control type="email" placeholder="price After Descount"
                             
                             value={priceAfter}
-                            onChange={(e) => setPriceAfter(e.target.value)}
+                            onChange={onChangePricAfter}
                             />
+                        </Form.Group>
 
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                            <Form.Control type="email" placeholder="price Before Descount"
-                             value={priceBefore}
-                            onChange={(e) => setPriceBefore(e.target.value)}
-                                
-                            />
-                        </Form.Group>
+
 
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Control type="email" placeholder="Available quantity"
                              value={quant}
-                            onChange={(e) => setQuant(e.target.value)}
+                            onChange={onChangeQuantati}
                             />
                         </Form.Group>
 
@@ -104,7 +80,7 @@ const dispatch = useDispatch()
 
                             {
                                 category.map((item)=>{return(
-                                    <option value={item._id}>{item.name}</option>
+                                    <option value={item._id} key={item._id}>{item.name}</option>
 
 
                                 )})
@@ -115,14 +91,10 @@ const dispatch = useDispatch()
                         </Form.Select>
                      </Form>
                      <div className='my-4'>  
-
-                     
-                     <Button  variant="secondary">Save Changes</Button>{' '}
+                     <Button onClick={handelSubmit}  variant="secondary">Save Changes</Button>{' '}
                      </div>
-
-
+                     <ToastContainer/>
                   </div>
-
                 </div>
         </div>
 

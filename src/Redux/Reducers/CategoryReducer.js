@@ -1,7 +1,8 @@
-import { CREATE_CATEGORY, GET_ALL_CATEGORY , GET_ERROR } from "../type/type"
+import { CREATE_CATEGORY, GET_ALL_CATEGORY ,GET_ONE_CATEGORY, GET_ERROR } from "../type/type"
 
   const inital = {
     category :[] , 
+    oneCategory :[],
     loading : true,
     error : false
 } 
@@ -21,6 +22,15 @@ const CategoryReducer = ( state= inital , action) =>{
                  loading :false,
 
         }
+
+        case GET_ONE_CATEGORY:
+            return {
+                ...state,
+                oneCategory : action.payload , 
+                 loading :false,
+
+        }
+
         case GET_ERROR:
             return {
                 ...state,

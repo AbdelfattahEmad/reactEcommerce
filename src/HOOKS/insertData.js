@@ -1,20 +1,29 @@
 import baseUrl from "../Api/BaseUrl"
 
-const useInsertDataWithImg = async(Url , params) => {
+const insertDataWithImg = async(Url , params) => {
     
     const config = {
         headers:{"Content-type":"multipart/form-data"}
     }
+
 
     const res = await baseUrl.post(Url, params , config)
     return res
 }
 
 
-const useInsertData = async(Url , params) => {
+//getdata
+const getData = async(Url , params) => {
+    const res = await baseUrl.get(Url,params)
+    return res.data
+}
+
+
+//insert data
+const insertData = async(Url , params) => {
     const res = await baseUrl.post(Url ,params)
     return res
 }
 
 
-export {useInsertDataWithImg ,useInsertData}  ;
+export {insertDataWithImg ,insertData , getData}  ;

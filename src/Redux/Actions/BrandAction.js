@@ -1,6 +1,6 @@
 import baseUrl from "../../Api/BaseUrl";
 import {GET_ERROR ,  CREATE_CATEGORY, GET_ALL_BRAND } from "../type/type";
-import {useInsertDataWithImg} from "../../HOOKS/insertData";
+import {insertDataWithImg} from "../../HOOKS/insertData";
 
 
 
@@ -8,7 +8,7 @@ import {useInsertDataWithImg} from "../../HOOKS/insertData";
 const getAllBrand  = () =>  async(dispatch) => {
     try {
        const response = await baseUrl.get("brands");
-       console.log(response)
+       
        dispatch({
             type : GET_ALL_BRAND ,
             payload : response.data.data,
@@ -28,7 +28,7 @@ const getAllBrand  = () =>  async(dispatch) => {
 // create new Brand
 export  const createBrand  = (formData) =>  async(dispatch) => {
     try {
-       const response = await useInsertDataWithImg('brands' ,formData );
+       const response = await insertDataWithImg('brands' ,formData );
      
        dispatch({
             type :CREATE_CATEGORY ,

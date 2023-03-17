@@ -15,7 +15,6 @@ const AddSubClass=()=>{
       },[])
 
       const category = useSelector(state => state.AllCategory.category)
-      console.log(category)
 
   
 

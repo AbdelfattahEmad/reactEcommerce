@@ -10,6 +10,7 @@ const ShopProducts=()=>{
     <div style={{minHeight:"670px"}}>
          <HeaderCategory/>
          <Container>
+               
                 <DropDown/>
                 <CategoryContainer title=""/>
                 <PaginationPage/>

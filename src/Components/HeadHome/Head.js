@@ -4,17 +4,21 @@ import HomeProducts from '../pages/HomeProduct';
 import lap from "../images/lap.webp"
 import BrandFeture from '../Brands/BrandFeture';
 import HomeCategory from '../Category/HomeCategory';
+import ViewProductsHook from '../../HOOKS/productHooks/view-products-hook';
 
 
 
 function HeadHome() {
+
+const [AllProduct] = ViewProductsHook()
+
   return (
     <div>
       <Slider/>
       <HomeCategory/>
-      <HomeProducts pathText="/allproduct"/>
+      <HomeProducts  products={AllProduct}  title='BestSeller' pathText="/allproduct" />
       <DiscountSection img={lap}/>
-      <HomeProducts pathText="/allproduct"/>
+      <HomeProducts products={AllProduct}  title='BestSeller' pathText="/allproduct"/>
       <BrandFeture/>
     </div>
   );

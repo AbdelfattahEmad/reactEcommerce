@@ -1,11 +1,11 @@
 import baseUrl from "../../Api/BaseUrl";
-import {GET_ERROR , GET_ALL_CATEGORY, CREATE_CATEGORY } from "../type/type";
-import {useInsertDataWithImg} from "../../HOOKS/insertData";
+import {GET_ERROR , GET_ALL_CATEGORY, CREATE_CATEGORY, GET_ONE_CATEGORY } from "../type/type";
+import {insertDataWithImg} from "../../HOOKS/insertData";
 
 
 
 // get All Category 
-const getCategoryAction =()=>  async(dispatch) => {
+ export const getCategoryAction =()=>  async(dispatch) => {
     try {
        const response = await baseUrl.get("categories");
        dispatch({
@@ -27,7 +27,7 @@ const getCategoryAction =()=>  async(dispatch) => {
 // create new Category 
 export  const createCategory  = (formData) =>  async(dispatch) => {
     try {
-       const response = await useInsertDataWithImg('categories' ,formData );
+       const response = await insertDataWithImg('categories' ,formData );
      
        dispatch({
             type :CREATE_CATEGORY ,
@@ -42,5 +42,27 @@ export  const createCategory  = (formData) =>  async(dispatch) => {
         })
     }
 }
+
+
+
+
+
+export const getOneCategoryAction =()=>  async(dispatch) => {
+    try {
+       const response = await baseUrl.get(`categories/`);
+       dispatch({
+            type : GET_ONE_CATEGORY ,
+            payload : response.data.data,
+            error: false
+        })
+    } catch(err) {
+        dispatch({
+            type : GET_ERROR ,
+            payload : err,
+            error : true,
+        })
+    }
+}
+
 
 export default getCategoryAction;

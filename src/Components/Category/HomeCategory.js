@@ -29,10 +29,11 @@ const category = useSelector(state => state.AllCategory.category)
             <Row className=" my-2 d-flex">
 
             {
-                category.map((cat,index)=>{
+                 category?.length > 0 ? category.map((cat,index)=>{
                     return <CategoryCart key={index} title={cat.title} img={cat.image}  price={cat.price}/>
-                })
+                }) : <h1>loading/</h1>
             }
+            
             </Row>
 
         </Container>

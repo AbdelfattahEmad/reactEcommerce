@@ -1,6 +1,12 @@
 import { Button } from "react-bootstrap"
+import { useParams } from "react-router-dom"
+import ViewProductDetailssHook from "../../HOOKS/productHooks/view-product-details-hook"
 
 const ProductDescreption =()=>{
+
+    const [id] = useParams()
+    const [item , images ,cat] =ViewProductDetailssHook(id)
+  
     return(
         <div className="mx-8 my-5 mx-5">
             <h1>Clothes</h1>

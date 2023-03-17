@@ -2,16 +2,16 @@ import { Col, Row } from "react-bootstrap"
 import ProductGallary from "./ProductGallary"
 import ProductDescreption from "./ProductDescreption"
 
-const ProductDetails=()=>{
+const ProductDetails=({id})=>{
     return(
         <div className="">
             <Row className="py-3" >
                 <Col lg="4">
-                <ProductGallary/>
+                <ProductGallary id={id}/>
                 </Col>
                     
                 <Col lg="8">
-                <ProductDescreption/>
+                <ProductDescreption id={id}/>
                 </Col>
             </Row>
             
