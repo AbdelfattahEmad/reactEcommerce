@@ -1,5 +1,5 @@
 import baseUrl from "../../Api/BaseUrl";
-import {GET_ERROR ,  CREATE_CATEGORY, GET_ALL_BRAND } from "../type/type";
+import {GET_ERROR ,  CREATE_CATEGORY, GET_ALL_BRAND,CREATE_BRAND } from "../type/type";
 import {insertDataWithImg} from "../../HOOKS/insertData";
 
 
@@ -31,7 +31,7 @@ export  const createBrand  = (formData) =>  async(dispatch) => {
        const response = await insertDataWithImg('brands' ,formData );
      
        dispatch({
-            type :CREATE_CATEGORY ,
+            type :CREATE_BRAND ,
             payload : response,
             loading : true 
         })

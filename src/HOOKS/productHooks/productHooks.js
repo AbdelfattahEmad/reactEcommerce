@@ -3,6 +3,7 @@
  import { useDispatch, useSelector } from 'react-redux';
  import getCategoryAction from '../../Redux/Actions/CategoryAction'
  import notify from '../../HOOKS/CategoryHooks/UseNotifiction';
+import { createProduct } from '../../Redux/Actions/productAction';
 
  
 const  AddProductHook = () => { 
@@ -22,7 +23,7 @@ const  AddProductHook = () => {
     const [priceBefore, setPriceBefore] = useState("")
     const [priceAfter, setPriceAfter] = useState("")
     const [rating, setRating] = useState()
-    const [quant, setQuant] = useState()
+    const [quant, setQuant] = useState("")
     const [loading, setLoading] = useState(true)
 
 
@@ -41,16 +42,16 @@ const  AddProductHook = () => {
 
         const onChangePricePefore = (event) =>{
             event.persist();
-            priceBefore(event.target.value)
+            setPriceBefore(event.target.value)
         }
         const onChangePricAfter = (event) =>{
             event.persist();
-            priceAfter(event.target.value)
+            setPriceAfter(event.target.value)
         }
 
         const onChangeQuantati = (event) =>{
             event.persist();
-            setQuant (event.target.value)
+            setQuant(event.target.value)
         }
 
 
@@ -58,13 +59,20 @@ const  AddProductHook = () => {
   
  
     // to save data
-    const handelSubmit = (event) =>{
+    const handelSubmit = async (event) =>{
         event.preventDefault()
         if(proName === "" ||proDescreption===""||images.length <=0 ||priceBefore<=0||priceBefore<=0|priceAfter===""||rating===""||quant==="")
         {
             notify(" please compleate  the data ","warn")
-
+        } else {
+            const formData = new FormData();
+            formData.append("title" ,proName )
+            formData.append("price" ,priceBefore)
+            formData.append("dec" ,proDescreption)
+            formData.append("images" ,images);
+            await dispatch(createProduct(FormData))
         }
+
 
     }
     useEffect(()=>{
@@ -90,13 +98,12 @@ const  AddProductHook = () => {
             }
             
         }
-
     },[loading])
 
 
 
-    return [onChangeDescrep,onChangeProName ,onChangePricePefore,onChangePricAfter,onChangeQuantati,loading,
+    return { onChangeDescrep,onChangeProName ,onChangePricePefore,onChangePricAfter,onChangeQuantati,loading,
         Products ,images,setImages,proName ,setproName,proDescreption,setProDescreption,priceAfter,setPriceAfter,
-        priceBefore,setPriceBefore,quant,setQuant ,rating,setRating,category,handelSubmit ] 
+        priceBefore,setPriceBefore,quant,setQuant ,rating,setRating,category,handelSubmit } 
 }
 export default AddProductHook

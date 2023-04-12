@@ -23,11 +23,26 @@ import AllFavorateProduct from './Components/User/AllFavorateProduct';
 import PersonalData from './Components/User/PersonalData';
 import ProfileUser from './Components/User/profileUser';
 import AdminAddProductPages from './Components/Admin/AddPoroudctspages';
+import ForgetPassword from './Components/login/forgetPassord';
+import veriefyPassword from './Components/login/verify-password-page';
+import ResetPassword from './Components/login/ResetPassordPage';
+import AddCoponPage from './Components/Admin/addCupponPage';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { autoLogin } from './Redux/Actions/authAction';
+import EditCoponPage from './Components/Admin/AdminEditCopponPage';
+import NewPersonalData from './Components/User/NewAdressData';
+
 
 
 
 
 function App() {
+ const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(autoLogin())
+
+  },[])
   return (
     <div>
       <NavbarLogin/>
@@ -40,6 +55,15 @@ function App() {
         <Route path="/allbrand" element={<AllBrands/>}/>
         <Route path="/allproduct" element={<ShopProducts/>}/>
         <Route path="/products/:id" element={<ProductDetailsPage/>}/>
+
+        <Route path="/Sp/cuppon" element={< AddCoponPage />}/>
+
+        <Route path="/admin/editcopon/:id" element={<  EditCoponPage/>}/>
+
+
+        <Route path="admin/addUser" element={<NewPersonalData/>}/>
+
+
         <Route path="/Cart" element={<CartPage/>}/>
         <Route path="/order/paymethoud" element={<PayMethod/>}/>
         <Route path="/admin" element={<AdminAllProductPage/>}/>
@@ -54,6 +78,13 @@ function App() {
         <Route path="/admin/personal" element={<PersonalData/>}/>
         <Route path="/admin/Profile" element={<ProfileUser/>}/>
         <Route path="/Sp/admin" element={<AdminAddProductPages/>}/>
+        <Route path="/user/forget-password" element={<ForgetPassword />}/>
+        <Route path="/user/veriyfy-code" element={<veriefyPassword />}/>
+        <Route path="/user/changePassord" element={<ResetPassword/>}/>
+
+
+
+
       </Routes>
       </BrowserRouter>
       <FooterSection/>

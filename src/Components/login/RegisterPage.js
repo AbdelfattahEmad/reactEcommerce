@@ -13,7 +13,7 @@ import { ToastContainer} from 'react-toastify';
 
     return(
         <Container className='my-5 text-center w-50'style={{minHeight:'670px'}} >
-        <Form>
+        <Form onSubmit={OnSubmit}>
 
           <Form.Group className="mb-3" >
             <Form.Label></Form.Label>
@@ -81,7 +81,7 @@ import { ToastContainer} from 'react-toastify';
 
 
           <div className='d-flex align-items-center p-3'>
-          <Button  onClick={OnSubmit} className='mx-2 p-2' variant="primary" type="submit">
+          <Button   className='mx-2 p-2' variant="primary" type="submit">
             Submit
           </Button>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">

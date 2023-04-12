@@ -23,6 +23,32 @@ export  const getAllProduct = (formData) =>  async(dispatch) => {
 }
 
 
+// Get all Product search
+export  const getAllProductSearch = (queryString) =>  async(dispatch) => {
+    try {
+       const response = await getData(`products?${queryString}`);
+     
+       dispatch({
+            type :GET_ALL_PRODUCT,
+            payload : response,
+            loading : true 
+        })
+    } catch(err) {
+        dispatch({
+            type : GET_ERROR ,
+            payload : err,
+            error : true,
+        })
+    }
+}
+
+
+
+
+
+
+
+
 //get product with id 
 export  const getOneProduct = (formData) =>  async(dispatch) => {
     try {
@@ -50,7 +76,7 @@ export  const getOneProduct = (formData) =>  async(dispatch) => {
 // create new PRODUCT
 export  const createProduct = (formData) =>  async(dispatch) => {
     try {
-       const response = await insertDataWithImg('/api/v1/products?&name= car&id=1&price=5&priceAfterD=2');
+       const response = await insertDataWithImg('products',formData);
      
        dispatch({
             type :CREATE_PRODUCT,

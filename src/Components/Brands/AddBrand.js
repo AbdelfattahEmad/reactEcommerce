@@ -6,7 +6,7 @@ import { ToastContainer} from 'react-toastify';
 
 const AddBrand =()=>{
 
-  const  [handleSubmit,onImageChange, img,name,loading,isPress ,onChangeName] = AddBrandHook()
+  const { handleSubmit,onImageChange, img,name,SelectedFile,loading,isPress ,onChangeName,btnDisable }= AddBrandHook()
   
     return(
 
@@ -42,10 +42,11 @@ const AddBrand =()=>{
         placeholder='Descreption'
         aria-describedby="passwordHelpBlock"
         default={name}
+        value={name}
       />
     </div>
     <div>
-    <Button onClick={handleSubmit} variant="primary">Enter</Button>{' '}
+    <Button onClick={handleSubmit} variant="primary" disabled={btnDisable}>Enter</Button>{' '}
 
     </div>
 
@@ -53,7 +54,7 @@ const AddBrand =()=>{
 isPress ? loading ? 
 (<Spinner animation="border" role="status">
   <span className="visually-hidden">Loading...</span>
-</Spinner>):(<h4>finshed</h4>): null  
+</Spinner>): "" : null  
 }
 <ToastContainer />
 

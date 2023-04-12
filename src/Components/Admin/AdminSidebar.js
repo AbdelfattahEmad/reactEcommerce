@@ -60,7 +60,22 @@ const AdminSidebar=()=>{
             </div>
         </Link>
         </div>
-    </div>
+
+        <div className="d-flex flex-column side-div">
+        <Link to="/Sp/cuppon" style={{textDecoration :"none"}}>
+        <div className="side">
+            Add couppon
+            </div>
+        </Link>
+        </div>
+
+
+
+
+        </div>
+
+
+
     )
 
 }

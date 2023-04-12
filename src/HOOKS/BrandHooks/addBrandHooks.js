@@ -19,17 +19,28 @@ const AddBrandHook=()=>{
     const [loading, setLoading] = useState(true)
     const [isPress, setIsPress] = useState(false)
 
+
+    const checkValidity = () => {
+      if (name === "" || SelectedFile === null){
+        setBtnDisable(true);
+      } else {
+        setBtnDisable(false);
+      }
+    }
+
     // to change name
 
      const onChangeName=(event)=>{
         event.persist()
-         setName(event.target.value)
-        }
+        setName(event.target.value);
+        checkValidity()
+     }
   // when add  image save it  
     const onImageChange = (event) =>{
       if(event.target.files && event.target.files[0]) {
           setImg(URL.createObjectURL(event.target.files[0]))
           setSelectedFile(event.target.files[0])
+          checkValidity();
       }
     }
   
@@ -51,6 +62,7 @@ const AddBrandHook=()=>{
       
       setLoading(true)
       setIsPress(true)
+
       await dispatch(createBrand(formData))
     
       setLoading(false)
@@ -59,13 +71,7 @@ const AddBrandHook=()=>{
     }
 
     useEffect(()=>{
-        if(loading === false){
-          setImg(empty)
-          setName("")
-          setSelectedFile(null)
-          console.log( "finshed")
-          setLoading(true)
-          setTimeout(()=>setImg(false), 1000 )
+        if(!loading){
             if(res.status === 201) {
               notify("Added successfully" ,"success");
               setImg(empty);
@@ -79,9 +85,9 @@ const AddBrandHook=()=>{
             }
           
         }
-      },[loading])
+    },[loading])
       
-    return [handleSubmit,onImageChange, img,name,SelectedFile,loading,isPress ,onChangeName,btnDisable]
+    return {handleSubmit,onImageChange, img,name,SelectedFile,loading,isPress ,onChangeName,btnDisable}
 
 
 };

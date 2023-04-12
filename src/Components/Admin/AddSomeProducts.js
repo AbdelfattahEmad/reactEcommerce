@@ -7,9 +7,9 @@ import addProductHook from '../../HOOKS/productHooks/productHooks';
 
 const AddSomeProducts =()=>{
 
-    const [onChangeDescrep,onChangeProName ,onChangePricePefore,onChangePricAfter,onChangeQuantati,loading,
+    const { onChangeDescrep,onChangeProName ,onChangePricePefore,onChangePricAfter,onChangeQuantati,loading,
         Products ,images,setImages,proName ,setproName,proDescreption,setProDescreption,priceAfter,setPriceAfter,
-        priceBefore,setPriceBefore,quant,setQuant ,rating,setRating,category,handelSubmit ]= addProductHook()
+        priceBefore,setPriceBefore,quant,setQuant ,rating,setRating,category,handelSubmit } = addProductHook()
 
 
     return(
@@ -66,7 +66,7 @@ const AddSomeProducts =()=>{
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Control type="email" placeholder="Available quantity"
                              value={quant}
-                            onChange={onChangeQuantati}
+                             onChange={onChangeQuantati}
                             />
                         </Form.Group>
 

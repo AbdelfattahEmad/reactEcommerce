@@ -9,7 +9,6 @@ const AddSubClass=()=>{
   
   const dispatch = useDispatch()
 
-  
       useEffect(()=>{
           dispatch(getCategoryAction());
       },[])

@@ -203,3 +203,17 @@
     position: absolute;
     z-index: -1;
   }
+
+  /*eddit user*/
+  .edit{
+    background-color: aliceblue;
+    border-radius: 30px;
+    margin: 30px 20px;
+
+  }
+
+  .delete{
+    display: flex;
+    justify-content: space-between;
+
+  }

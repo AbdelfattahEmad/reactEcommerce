@@ -1,10 +1,14 @@
-import { CREATE_NEW_USER ,LOGIN_IN } from "../type/type"
+import { CREATE_NEW_USER ,LOGIN_IN,GET_ERROR ,FORGET_PASSWORD ,VERIFY_PASSWORD  ,RESET_PASSWORD , AUTO_LOGIN , LOG_OUT} from "../type/type"
 
   const inital = {
    createUser:[] , 
-   LOGIN:[],
-    loading : true,
-    error : false
+   user:null,
+   forgetPassord:[],
+   verifyPassord:[],
+   resetPassword : [],
+
+   loading : true,
+   error : false
 } 
 const authReducer = ( state= inital , action) =>{
     switch(action.type){
@@ -13,15 +17,58 @@ const authReducer = ( state= inital , action) =>{
                 ...state,
                 createUser : action.payload , 
                 loading :false,
-                error:action.error
         }
         case LOGIN_IN :
             return {
                 ...state,
-                login: action.payload , 
+                user:action.payload , 
+                error:action.error
+        }
+        case FORGET_PASSWORD  :
+            return {
+                ...state,
+                forgetPassord: action.payload , 
                 error:action.error
         }
 
+
+        case VERIFY_PASSWORD :
+            return {
+                ...state,
+                verifyPassord: action.payload , 
+                error:action.error
+        }
+        case RESET_PASSWORD :
+            return {
+                ...state,
+                resetPassword: action.payload , 
+                error:action.error
+        }  
+        case  AUTO_LOGIN :
+        return {
+            ...state,
+            user: action.payload , 
+            error:action.error
+    }
+    case  LOG_OUT :
+        return {
+            ...state,
+            user: action.payload , 
+            error:action.error
+    }
+
+
+
+       
+
+
+
+
+        case GET_ERROR :
+            return {
+                ...state,
+                error: action.payload
+            }
 
         default :
             return state 

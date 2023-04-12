@@ -6,7 +6,9 @@ import { useNavigate } from "react-router-dom";
 
 const RegisterHook =()=>{
     const dispatch = useDispatch()
-    const userData = useSelector((state) =>state.authReducer.createUser)
+
+    const userData = useSelector((state) => state.authReducer.createUser);
+    const RequestErrors = useSelector((state) => state.authReducer.error);
 
     const navigate = useNavigate()
 
@@ -67,10 +69,11 @@ const RegisterHook =()=>{
 
 
     //save Data 
-    const  OnSubmit = async () => {
-        validationValue()
+    const  OnSubmit = async (event) => {
+        event.preventDefault();
+        // validationValue()
         setLoading(true)
-       await dispatch(createNewUser({
+        await dispatch(createNewUser({
             name,
             email,
             password,
@@ -79,48 +82,32 @@ const RegisterHook =()=>{
         
         }))
         setLoading(false)
-        setTimeout(()=>{
-            navigate('/login')
-        },2000);
+        // setTimeout(()=>{
+        //     navigate('/login')
+        // },2000);
 
 
     }
 
     useEffect(()=>{
-        if(loading === false){
+        if(!loading){
+
             if(userData){
-                if(userData.data.token){
-                    localStorage.setItem("token" , userData.data.token)
+                if(userData?.data?.token){
+                    localStorage.setItem("token",userData.data.token)
                     notify("Done","sucsses")
                     setName("")
                     setLoading(true)
-
                 }
-                if(userData.data.errors){
-                    if(userData.data.error[0].msg === "E-mail already in use"){
-                        notify(" this account already here","error")
-
-
-                    }
-                }
-                if(userData.data.errors){
-                    if(userData.data.error[0].msg === "acccept only egypt phone numbers"){
-                        notify(" this account already here","error")
-
-
-                    }
-                }
-                if(userData.data.errors){
-                    if(userData.data.error[0].msg === "must be at least 6 chars"){
-                        notify(" this account already here","error")
-
-
-                    }
-                }
-
-
+               
             }
 
+            if(RequestErrors){
+                RequestErrors?.map((error)=>{
+                    notify(error?.msg,"error")
+                })
+               
+            }
         }
 
     },[loading])

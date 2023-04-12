@@ -11,7 +11,7 @@ const ViewProductsHook = () =>{
     },[])
 
     const AllProduct = useSelector((state)=> state.AllProducts.allProducts) 
-    console.log( AllProduct)
+
 
 
      
