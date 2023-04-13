@@ -51,10 +51,11 @@ const DeletDataToken = async(url , params)=> {
     const config = {
         headers :{Authorization : `Bearer ${localStorage.getItem("token")}`}
     }
-    const res = await baseUrl.DELETE(url , config)
+    const res = await baseUrl.delete(url , config)
     return res.data
-
 }
+
+
 
 const insertUpdateData = async(url , params)=>{
     const config = {

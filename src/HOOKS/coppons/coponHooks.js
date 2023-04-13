@@ -75,40 +75,27 @@ const CoponHooks =()=> {
     },[loading])
 
 
-    const getCopon = useSelector((state)=> state.CopponReducer.addCoppon)
 
+      
 
+    // get all coppons 
+
+    const getCopon = useSelector((state)=>state.CopponReducer.getAllCoppon)
+  
     useEffect(()=>{
         const get = async()=>{
-
             await dispatch(getAllCoppon())
-
         }
         get();
     },[])
 
-    let coppons = [] ;
-
-    try{
-        if(getCopon && getCopon.data.length >=1){
-            coppons = getCopon.data
-        }
-    }catch(e){}
 
 
 
 
 
 
-
-
-    return {coponName ,onChangeName  ,coponData,onChangeData ,coponValue ,onChangeValue , onSubmit , coppons}
-
-
-
-
-    
-
+    return {coponName ,onChangeName  ,coponData,onChangeData ,coponValue ,onChangeValue , onSubmit ,getCopon}
 
 
 }

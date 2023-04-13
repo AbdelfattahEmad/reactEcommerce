@@ -12,7 +12,7 @@ const AdminEditCoppon =()=>{
   const dateRef = useRef()
 
 
-    const {coponName ,onChangeName  ,coponData,onChangeData ,coponValue ,onChangeValue , onSubmit ,  coppons}=EditCoponHooks(id)
+    const {coponName ,onChangeName  ,coponData,onChangeData ,coponValue ,onChangeValue , onSubmit}= EditCoponHooks(id)
 
     return(
 
@@ -56,7 +56,7 @@ const AdminEditCoppon =()=>{
     <div>
 
 
-    <Button  variant="primary" onClick={onSubmit} > save Edit</Button>{' '}
+    <Button  variant="primary" onClick={onSubmit}>save Edit</Button>{' '}
 
     </div>
 

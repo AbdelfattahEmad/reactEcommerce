@@ -2,7 +2,7 @@ import { ADD_COPPON , GET_ALL_COPPON , DELETE_COPPON , GET_ONE_COPPON , EDIT_COP
 
   const inital = {
     addCoppon:[] ,
-    getAllCoppon :[] ,
+    getAllCoppon:[] ,
     deleteCoppon : [], 
     getOneCoppon:[],
     EditCoppon :[],
@@ -11,7 +11,7 @@ import { ADD_COPPON , GET_ALL_COPPON , DELETE_COPPON , GET_ONE_COPPON , EDIT_COP
 } 
 const CopponReducer = ( state= inital , action) =>{
     switch(action.type){
-        case  ADD_COPPON :
+        case ADD_COPPON :
             return {
                 ...state,
                 addCoppon: action.payload , 

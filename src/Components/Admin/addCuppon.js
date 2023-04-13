@@ -8,9 +8,10 @@ import AdminCoponCart from './adminCoponCart';
 
 const AddCopon =()=>{
 
-    const {coponName ,onChangeName  ,coponData,onChangeData ,coponValue ,onChangeValue , onSubmit ,  coppons}=CoponHooks()
+    const {coponName ,onChangeName  ,coponData,onChangeData ,coponValue ,onChangeValue , onSubmit , getCopon}=CoponHooks()
 
      const dateRef = useRef()
+
     return(
 
 <div className="">
@@ -66,7 +67,7 @@ const AddCopon =()=>{
         <Col sm="8">
 
           {
-             coppons.data ? (coppons.data.map((item , index)=>{
+             getCopon.data? (getCopon.data.map((item , index)=>{
               return (
                 <AdminCoponCart key={index} coppon={item}/> 
               )
@@ -74,6 +75,7 @@ const AddCopon =()=>{
              ) : <h2 className='py-2 px-2'>There is no coupon</h2>
           }
         </Col>
+        
       </Row>
 
 

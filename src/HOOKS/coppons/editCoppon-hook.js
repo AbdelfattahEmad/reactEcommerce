@@ -13,33 +13,35 @@ const EditCoponHooks =(id)=> {
 
     const [coponName ,setCoponName] = useState('')
     const [coponData ,setCoponData] = useState('')
-    const [coponValue ,setCoponValue] = useState(0)
+    const [coponValue ,setCoponValue] = useState("")
     const [loading ,setLoading] = useState(true)
     const [loadingData ,setLoadingData] = useState(true)
 
-    const getOneCopon = useSelector((state)=> state.CopponReducer.getOneCoppon)
+    const OneCopon = useSelector((state)=> state.CopponReducer.getOneCoppon)
+
+    if(OneCopon){
+        console.log(OneCopon.data.name)
+    }
 
 
 
     useEffect(()=>{
         const get = async()=>{
             setLoadingData(true)
-
             await dispatch(getOneCoppon(id))
             setLoadingData(false)
 
         }
         get();
     },[])
+
+
     useEffect(()=>{
-        if(loadingData === false){
-            if(getOneCopon.data){
-                setCoponName(getOneCopon.data.name)
-                setCoponData(getOneCopon.data.expire)
-                setCoponValue(getOneCopon.data.discount)
-
-
-
+        if(!loadingData ){
+            if(OneCopon.data){
+                setCoponName(OneCopon.data.name)
+                setCoponData(OneCopon.data.expire)
+                setCoponValue(OneCopon.data.discount)
             }
         }
 

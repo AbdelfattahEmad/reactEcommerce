@@ -1,5 +1,5 @@
 
-import {getDataToken, insertData  ,DeletDataToken, insertUpdateData} from "../../HOOKS/insertData";
+import {getDataToken, insertData  ,DeletDataToken, insertUpdateData , getData} from "../../HOOKS/insertData";
 import { ADD_COPPON , GET_ALL_COPPON , DELETE_COPPON,GET_ONE_COPPON , EDIT_COPPON} from "../type/type";
 
 
@@ -24,6 +24,7 @@ export  const addCoppon = (body) =>  async(dispatch) => {
 export  const getAllCoppon = (body) =>  async(dispatch) => {
     try {
        const response = await getDataToken(`/coupons` , body);
+
      
        dispatch({
             type :GET_ALL_COPPON,
@@ -32,7 +33,7 @@ export  const getAllCoppon = (body) =>  async(dispatch) => {
     } catch(e) {
         dispatch({
             type :GET_ALL_COPPON ,
-            payload : e.response,
+            payload :e.response,
         })
     }
 }
@@ -41,7 +42,7 @@ export  const getAllCoppon = (body) =>  async(dispatch) => {
 //get one coppon 
 export  const getOneCoppon = (id) =>  async(dispatch) => {
     try {
-       const response = await getDataToken(`/coupons/${id}`);
+       const response = await  getData(`/coupons/${id}`);
      
        dispatch({
             type :GET_ONE_COPPON,
@@ -57,16 +58,18 @@ export  const getOneCoppon = (id) =>  async(dispatch) => {
 
 
 
+
+
 //DElete copoon 
-export  const deleteCoppon = (id) =>  async(dispatch) => {
+export  const deleteCoppon = (id) => async(dispatch) => {
     try {
-       const response = await DeletDataToken(`/api/v1/coupons/${id}`);
-     
+       const response = await DeletDataToken(`/coupons/${id}`);
+       
        dispatch({
             type :DELETE_COPPON,
             payload : response,
         })
-    } catch(e) {
+    } catch(e){
         dispatch({
             type :DELETE_COPPON ,
             payload : e.response,
@@ -80,7 +83,7 @@ export  const deleteCoppon = (id) =>  async(dispatch) => {
 //edit coppon
 export  const editCoppon = (id , body) =>  async(dispatch) => {
     try {
-       const response = await insertUpdateData(`/api/v1/coupons/${id}` , body);
+       const response = await insertUpdateData(`/coupons/${id}` , body);
      
        dispatch({
             type :EDIT_COPPON,
