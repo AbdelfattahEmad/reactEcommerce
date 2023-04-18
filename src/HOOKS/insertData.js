@@ -64,9 +64,6 @@ const insertUpdateData = async(url , params)=>{
     const res = await baseUrl.put(url ,params , config)
     return res
 
-
-
-
 }
 
 

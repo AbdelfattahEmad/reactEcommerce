@@ -76,7 +76,6 @@ const AddSomeProducts =()=>{
                         onChange={(e) => setRating(e.target.value)}
                         
                         >
-                            <option>Brand</option>
 
                             {
                                 category.map((item)=>{return(

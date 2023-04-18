@@ -1,32 +1,31 @@
 import Form from 'react-bootstrap/Form';
-import { Button, useAccordionButton } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { ToastContainer} from 'react-toastify';
-import CoponHooks from '../../HOOKS/coppons/coponHooks';
 import { useRef } from 'react';
+import UserAdressHook from '../../HOOKS/UserHooks/Adress-hooks';
 
 
 const AddNewPersonalData =()=>{
-    const {coponName ,onChangeName  ,coponData,onChangeData ,coponValue ,onChangeValue , onSubmit ,  coppons}=CoponHooks()
+
+  const {alias,onChangeAlias ,details,onChangeDetails,phone,onChangePhone,onSubmit }=UserAdressHook()
+
+
     
     const dateRef =useRef() 
 
 
     return(
+      <div className="px-5 py-5">
 
-<div className="">
-    <div> <h1 className=''>Add  new adress</h1></div>
-
-
-
-    
-            
+      <Container >    
+    <div> <h1 className=''>Add new adress</h1></div> 
     <div>
     <Form.Control 
          className='my-3'
             type="text"
-        placeholder='ADD Copon'
-        value={coponName}
-        onChange={onChangeName }
+        placeholder="New Adress"
+        value={alias}
+        onChange={onChangeAlias }
       />
     </div>
 
@@ -34,13 +33,11 @@ const AddNewPersonalData =()=>{
     <Form.Control 
     ref={dateRef}
          className='my-3'
-        type="text"
-        placeholder='Expiry date'
-        value={coponData}
-        onChange={onChangeData}
+        type="phone number"
+        placeholder='Detailed Address'
+        value={details}
+        onChange={onChangeDetails}
 
-        onFocus={()=>dateRef.current.type = "date"}
-        onBlur={()=>dateRef.current.type = "text"}
 
 
       />
@@ -49,10 +46,10 @@ const AddNewPersonalData =()=>{
     <div>
     <Form.Control 
          className='my-3'
-        type="number"
+        type="text"
         placeholder='discount percentage'
-        value={coponValue}
-        onChange={onChangeValue}
+        value={phone}
+        onChange={onChangePhone}
       />
 
     </div>
@@ -66,7 +63,10 @@ const AddNewPersonalData =()=>{
 
         <ToastContainer />
 
+</Container>
 </div>
+
+
 
 
 )

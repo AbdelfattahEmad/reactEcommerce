@@ -26,9 +26,11 @@ const AddPersonalData=()=>{
                     <div className="py-3"><Button variant="dark">edit</Button></div>
                     <div> <Button variant="dark">delete</Button></div>
                 </div>
-
                 </div>
-                <Link to={`admin/addUser`} style={{textDecoration : "none"}}>
+
+
+                
+                <Link to={`/admin/addUser`} style={{textDecoration : "none"}}>
                 <div  className="px-4">
                     <div className="py-4"><Button variant="dark">Add New aderss</Button></div>
                 </div>

@@ -5,7 +5,7 @@ import { ADD_COPPON , GET_ALL_COPPON , DELETE_COPPON , GET_ONE_COPPON , EDIT_COP
     getAllCoppon:[] ,
     deleteCoppon : [], 
     getOneCoppon:[],
-    EditCoppon :[],
+    editCoppon :[],
     loading : true,
     error : false
 } 
@@ -45,7 +45,7 @@ const CopponReducer = ( state= inital , action) =>{
         case EDIT_COPPON:
             return {
                 ...state,
-               EditCoppon: action.payload , 
+               editCoppon: action.payload , 
                 loading :false,
             }
                 

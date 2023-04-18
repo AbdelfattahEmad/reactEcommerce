@@ -4,12 +4,12 @@ import notify from '../CategoryHooks/UseNotifiction';
 import { addCoppon, getAllCoppon } from "../../Redux/Actions/addCopponAction";
 
 
-const CoponHooks =()=> {
+const CoponHooks =(id)=> {
 
     const dispatch = useDispatch()
 
-    const [coponName ,setCoponName] = useState('')
-    const [coponData ,setCoponData] = useState('')
+    const [coponName ,setCoponName] = useState([""])
+    const [coponData ,setCoponData] = useState([""])
     const [coponValue ,setCoponValue] = useState(0)
     const [loading ,setLoading] = useState(true)
 

@@ -10,7 +10,6 @@ const AddProduct =()=>{
   const  [id,name,loading,category,subCategory,handelChange,handelSubmit,onChangeName]=AddSubCategoryHook()
 
  
-  console.log(category)
 
 
     return(

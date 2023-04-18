@@ -1,7 +1,8 @@
 import { Col, Container, Row } from "react-bootstrap"
 import UserSidebar from "./UserSidebar"
+import AddNewPersonalData from "./AddNewPresonalData"
 
-const UserAllProductPage=()=>{
+const UserAllAdress=()=>{
     return(
         <Container>
             <Row className="py-3">
@@ -10,8 +11,7 @@ const UserAllProductPage=()=>{
                 </Col>
 
                 <Col  sm="9" xs="10" md="10">
-                    
-                    
+                <AddNewPersonalData/>
                 </Col>
 
             </Row>
@@ -20,4 +20,4 @@ const UserAllProductPage=()=>{
 
 
 }
-export default UserAllProductPage
+export default UserAllAdress

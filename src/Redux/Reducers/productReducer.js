@@ -2,13 +2,14 @@ import {CREATE_PRODUCT,GET_ERROR , GET_ALL_PRODUCT,GET_PRODUCT_DETAILS} from "..
 
   const inital = {
     product:[] , 
-    allProducts : [],
+    getAllProducts:[],
     oneProduct : [],
     loading : true,
     error : false
 } 
 const ProductReducer = ( state= inital , action) => {
     switch(action.type){
+
         case CREATE_PRODUCT:
             return {
                 ...state,
@@ -16,22 +17,17 @@ const ProductReducer = ( state= inital , action) => {
                 loading :false,
                 error:action.error
         }
-        case CREATE_PRODUCT:
-            return {
-                ...state,
-                product : action.payload , 
-                 loading :false,
+
                  
-
-        }
-
         case GET_ALL_PRODUCT:
             return {
                 ...state,
-                allProducts: action.payload , 
+                getAllProducts: action.payload , 
                  loading :false,
                  
         }
+
+
         case GET_PRODUCT_DETAILS:
             return {
                 ...state,
@@ -49,6 +45,7 @@ const ProductReducer = ( state= inital , action) => {
                 error: true,
                 message:action.payload.message
         }
+        
         default :
             return state 
     }

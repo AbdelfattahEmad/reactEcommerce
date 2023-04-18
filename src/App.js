@@ -31,7 +31,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { autoLogin } from './Redux/Actions/authAction';
 import EditCoponPage from './Components/Admin/AdminEditCopponPage';
-import NewPersonalData from './Components/User/NewAdressData';
+import UserAllAdress from './Components/User/AddNewPresonalData';
 
 
 
@@ -58,10 +58,7 @@ function App() {
 
         <Route path="/Sp/cuppon" element={< AddCoponPage />}/>
 
-        <Route path="/admin/editcopon/:id" element={<  EditCoponPage/>}/>
-
-
-        <Route path="admin/addUser" element={<NewPersonalData/>}/>
+        <Route path="/admin/editcopon/:id" element={<EditCoponPage/>}/>
 
 
         <Route path="/Cart" element={<CartPage/>}/>
@@ -81,6 +78,10 @@ function App() {
         <Route path="/user/forget-password" element={<ForgetPassword />}/>
         <Route path="/user/veriyfy-code" element={<veriefyPassword />}/>
         <Route path="/user/changePassord" element={<ResetPassword/>}/>
+        
+
+        <Route path="/admin/addUser" element={<UserAllAdress/>}/>
+
 
 
 

@@ -1,5 +1,5 @@
 
-import {getDataToken, insertData  ,DeletDataToken, insertUpdateData , getData} from "../../HOOKS/insertData";
+import {getDataToken, insertData  ,DeletDataToken, insertUpdateData } from "../../HOOKS/insertData";
 import { ADD_COPPON , GET_ALL_COPPON , DELETE_COPPON,GET_ONE_COPPON , EDIT_COPPON} from "../type/type";
 
 
@@ -42,7 +42,10 @@ export  const getAllCoppon = (body) =>  async(dispatch) => {
 //get one coppon 
 export  const getOneCoppon = (id) =>  async(dispatch) => {
     try {
-       const response = await  getData(`/coupons/${id}`);
+
+       const response = await  getDataToken(`coupons/${id}`);
+       
+       console.log(response)
      
        dispatch({
             type :GET_ONE_COPPON,
@@ -83,7 +86,8 @@ export  const deleteCoppon = (id) => async(dispatch) => {
 //edit coppon
 export  const editCoppon = (id , body) =>  async(dispatch) => {
     try {
-       const response = await insertUpdateData(`/coupons/${id}` , body);
+       const response = await insertUpdateData(`/coupons/${id}`, body);
+       console.log(response)
      
        dispatch({
             type :EDIT_COPPON,

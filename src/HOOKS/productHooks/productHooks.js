@@ -8,8 +8,9 @@ import { createProduct } from '../../Redux/Actions/productAction';
  
 const  AddProductHook = () => { 
     const dispatch = useDispatch()
+
     const category = useSelector(state => state.AllCategory.category)
-    const Products = useSelector(state => state.AllProducts.product)
+    const Products = useSelector(state => state.ProductReducer.getAllProducts)
 
 
     useEffect(()=>{
@@ -44,20 +45,19 @@ const  AddProductHook = () => {
             event.persist();
             setPriceBefore(event.target.value)
         }
+
         const onChangePricAfter = (event) =>{
             event.persist();
             setPriceAfter(event.target.value)
         }
 
+
         const onChangeQuantati = (event) =>{
             event.persist();
             setQuant(event.target.value)
         }
+        
 
-
-
-  
- 
     // to save data
     const handelSubmit = async (event) =>{
         event.preventDefault()
@@ -75,6 +75,7 @@ const  AddProductHook = () => {
 
 
     }
+
     useEffect(()=>{
         if(loading === false){
             setImages([])

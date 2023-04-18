@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import notify from '../CategoryHooks/UseNotifiction';
-import { addCoppon, editCoppon, getOneCoppon } from "../../Redux/Actions/addCopponAction";
+import {editCoppon, getOneCoppon } from "../../Redux/Actions/addCopponAction";
 import { useNavigate } from "react-router-dom";
 
 
@@ -11,8 +11,8 @@ const EditCoponHooks =(id)=> {
     const  navigat = useNavigate()
     const dispatch = useDispatch()
 
-    const [coponName ,setCoponName] = useState('')
-    const [coponData ,setCoponData] = useState('')
+    const [coponName ,setCoponName] = useState("")
+    const [coponData ,setCoponData] = useState("")
     const [coponValue ,setCoponValue] = useState("")
     const [loading ,setLoading] = useState(true)
     const [loadingData ,setLoadingData] = useState(true)
@@ -20,16 +20,17 @@ const EditCoponHooks =(id)=> {
     const OneCopon = useSelector((state)=> state.CopponReducer.getOneCoppon)
 
     if(OneCopon){
-        console.log(OneCopon.data.name)
+        console.log(OneCopon)
     }
-
-
 
     useEffect(()=>{
         const get = async()=>{
             setLoadingData(true)
+
             await dispatch(getOneCoppon(id))
+
             setLoadingData(false)
+
 
         }
         get();
@@ -37,7 +38,7 @@ const EditCoponHooks =(id)=> {
 
 
     useEffect(()=>{
-        if(!loadingData ){
+        if(!loadingData){
             if(OneCopon.data){
                 setCoponName(OneCopon.data.name)
                 setCoponData(OneCopon.data.expire)
@@ -80,11 +81,6 @@ const EditCoponHooks =(id)=> {
 
         }
 
-
-
-
-
-
         setLoading(true)
         await dispatch(editCoppon(id,{
             name: coponName,
@@ -95,11 +91,11 @@ const EditCoponHooks =(id)=> {
         setLoading(false)
     }
 
-    const CoponRes = useSelector((state)=> state.CopponReducer.EditCoppon)
+    const editCoponRes = useSelector(state => state.CopponReducer.editCoppon)
 
     useEffect(()=>{
         if(loading === false){
-            if (CoponRes && CoponRes.status === 200){
+            if (editCoponRes && editCoponRes.status === 200){
                 notify("The code has been update successfully" , "success")
 
                 setTimeout(()=>{

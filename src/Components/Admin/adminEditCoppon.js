@@ -1,18 +1,24 @@
 import Form from 'react-bootstrap/Form';
 import { Button} from 'react-bootstrap';
 import { ToastContainer} from 'react-toastify';
-import { useRef } from 'react';
-import EditCoponHooks from '../../HOOKS/coppons/coponHooks';
+import { useEffect, useRef } from 'react';
+import EditCoponHooks from '../../HOOKS/coppons/editCoppon-hook';
 import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { getOneCoppon } from '../../Redux/Actions/addCopponAction';
 
 
 const AdminEditCoppon =()=>{
+  
+  const dispatch = useDispatch()
 
   const {id} = useParams()
   const dateRef = useRef()
 
 
     const {coponName ,onChangeName  ,coponData,onChangeData ,coponValue ,onChangeValue , onSubmit}= EditCoponHooks(id)
+
+
 
     return(
 
@@ -24,8 +30,8 @@ const AdminEditCoppon =()=>{
          className='my-3'
             type="text"
         placeholder='edit copoon'
-        value={coponName}
         onChange={onChangeName }
+        value={coponName}
       />
     </div>
 

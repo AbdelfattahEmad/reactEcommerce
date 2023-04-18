@@ -3,7 +3,7 @@ import { CREATE_PRODUCT, GET_ERROR , GET_ALL_PRODUCT,GET_PRODUCT_DETAILS } from 
 
 
 // Get all Product
-export  const getAllProduct = (formData) =>  async(dispatch) => {
+export  const getAllProduct = (formData) => async(dispatch) => {
     try {
        const response = await getData('products');
        console.log(response)

@@ -16,7 +16,7 @@ const ViewProductDetailssHook = (prodID , catID) =>{
 
     },[])
 
-    const oneProducts = useSelector((state)=> state.AllProducts.oneProduct) 
+    const oneProducts = useSelector((state)=> state.ProductReducer.oneProduct) 
     const oneCategory = useSelector((state)=> state.AllCategory.oneCategory) 
 
 //to show product data 

@@ -20,7 +20,7 @@ const ViewSearchProductsHook = () =>{
         getProduct('')
     },[])
 
-    const AllProduct = useSelector((state)=> state.AllProducts.allProducts) 
+    const AllProduct = useSelector((state)=> state.ProductReducer.allProducts) 
 
     let items = [] ;  let results = 0 ;
     try{

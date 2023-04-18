@@ -4,7 +4,7 @@ import PaginationPage from "../Pagination/Paginations"
 import CartItem from "../Cart/CartItem"
 import UserSidebar from "./UserSidebar"
 
-const AddUserProduct=()=>{
+const AddUserProduct =()=>{
     return(
         <Container>
         <Row className="py-3">
