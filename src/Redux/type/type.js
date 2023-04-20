@@ -60,6 +60,14 @@ export const EDIT_COPPON="EDIT_COPPON"
 
 export const ADD_ADRESS="ADD_ADRESS"
 
+export const GET_ALL_ADRESS="GET_ALL_ADRESS"
+
+
+export const DELETE_ADRESS="DELETE_ADRESS"
+
+
+
+
 
 
 

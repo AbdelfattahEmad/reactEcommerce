@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import notify from '../CategoryHooks/UseNotifiction';
-import { addCoppon, getAllCoppon } from "../../Redux/Actions/addCopponAction";
 import { AddAdress } from "../../Redux/Actions/UserAdressAction";
 
 
@@ -57,12 +56,20 @@ const UserAdressHook =(id)=> {
 
     useEffect(()=>{
         if(loading === false){
+
+            if(userAdress){console.log(userAdress)}
             if (userAdress && userAdress.status === 201){
                 notify("The code has been added successfully" , "success")
 
                 window.location.reload(false)
             
-            }else if (userAdress && userAdress.status === 400){
+            }
+             if (userAdress && userAdress.status === 200){
+                notify("The code has been added successfully" , "success")
+                window.location.reload(false)
+
+            }
+            else if (userAdress && userAdress.status === 400){
                 notify("It has already been added" , "error")
             }
         }
