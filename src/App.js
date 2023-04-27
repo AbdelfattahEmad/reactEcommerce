@@ -32,6 +32,7 @@ import { useDispatch } from 'react-redux';
 import { autoLogin } from './Redux/Actions/authAction';
 import EditCoponPage from './Components/Admin/AdminEditCopponPage';
 import UserAllAdress from './Components/User/AddNewPresonalData';
+import UserEditAdress from './Components/User/userEditPAge';
 
 
 
@@ -81,10 +82,7 @@ function App() {
         
 
         <Route path="/admin/addUser" element={<UserAllAdress/>}/>
-
-
-
-
+        <Route path="/admin/editUser/:id" element={<UserEditAdress/>}/>
 
       </Routes>
       </BrowserRouter>

@@ -1,5 +1,5 @@
-import { insertData , getDataToken , DeletDataToken} from "../../HOOKS/insertData"
-import { ADD_ADRESS , GET_ALL_ADRESS , DELETE_ADRESS} from "../type/type"
+import { insertData , getDataToken , DeletDataToken, insertUpdateData} from "../../HOOKS/insertData"
+import { ADD_ADRESS , GET_ALL_ADRESS , DELETE_ADRESS , EDIT_ADRESS ,GET_ONE_ADRESS} from "../type/type"
 
 
 
@@ -41,7 +41,7 @@ import { ADD_ADRESS , GET_ALL_ADRESS , DELETE_ADRESS} from "../type/type"
             })
             }catch(e){
             dispatch({
-                type : ADD_ADRESS,
+                type : GET_ALL_ADRESS,
                 payload:e.response,
             })
 
@@ -68,6 +68,49 @@ import { ADD_ADRESS , GET_ALL_ADRESS , DELETE_ADRESS} from "../type/type"
             })
         }
     }
+
+
+    //get one adress
+
+    export  const getOneAdress = (id ) => async( dispatch)=>{
+        try{
+            const response = await getDataToken(`addresses/${id}`)
+
+            dispatch({
+                type : GET_ONE_ADRESS,
+                payload: response ,
+            })
+            }catch(e){
+            dispatch({
+                type : GET_ONE_ADRESS,
+                payload:e.response,
+            })
+
+        }
+
+    }
+
+
+
+
+
+    // edit adress
+    export  const editAdress = (id , body) =>  async(dispatch) => {
+        try {
+           const response = await insertUpdateData(`/addresses/${id}`, body);
+         
+           dispatch({
+                type :EDIT_ADRESS,
+                payload : response,
+            })
+        } catch(e) {
+            dispatch({
+                type :EDIT_ADRESS ,
+                payload : e.response,
+            })
+        }
+    }
+    
 
 
 

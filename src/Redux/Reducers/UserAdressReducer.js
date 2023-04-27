@@ -1,9 +1,11 @@
-import { ADD_ADRESS , GET_ALL_ADRESS , DELETE_ADRESS} from "../type/type"
+import { ADD_ADRESS , GET_ALL_ADRESS , DELETE_ADRESS ,EDIT_ADRESS , GET_ONE_ADRESS} from "../type/type"
 
 const inital = {
 AddUserAdress: [] ,
 getAllAdress  :[],
 DeleteAdress :[],
+EditAdress : [],
+getOneAdress :[],
 loading : true,
 error : false
 } 
@@ -32,8 +34,21 @@ error : false
                 loading : false,
                 error :action.error
             } 
-
-        default  :
+            case EDIT_ADRESS :
+                return{
+                    ...state , 
+                    EditAdress : action.payload,
+                    loading : false,
+                    error :action.error
+                } 
+                case GET_ONE_ADRESS :
+                    return {
+                        ...state , 
+                        getOneAdress :action.payload , 
+                        loading: false , 
+                        error: action.error
+                    }
+        default :
         return state
         
         

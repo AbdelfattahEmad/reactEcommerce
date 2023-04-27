@@ -63,7 +63,16 @@ export const ADD_ADRESS="ADD_ADRESS"
 export const GET_ALL_ADRESS="GET_ALL_ADRESS"
 
 
-export const DELETE_ADRESS="DELETE_ADRESS"
+export const DELETE_ADRESS="DELETE_ADRESS" 
+
+export const EDIT_ADRESS = "EDIT_ADRESS"
+
+
+export const GET_ONE_ADRESS = "GET_ONE_ADRESS"
+
+
+
+
 
 
 

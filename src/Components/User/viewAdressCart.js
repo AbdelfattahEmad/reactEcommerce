@@ -27,7 +27,7 @@ const ViewAdressCart =({item})=>{
                 <div>
 
 
-                <Link to={`/admin/editcopon/`} style={{textDecoration : "none"}}>
+                <Link to={`/admin/editUser/${item._id}`} style={{textDecoration : "none"}}>
                 <div  className="px-4">
                     <div className="py-4"><Button variant="dark">Edit</Button></div>
                 </div>
