@@ -70,6 +70,9 @@ export const EDIT_ADRESS = "EDIT_ADRESS"
 
 export const GET_ONE_ADRESS = "GET_ONE_ADRESS"
 
+export const UPDATE_USER_DATA = "UPDATE_USER_DATA"
+
+
 
 
 

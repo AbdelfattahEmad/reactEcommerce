@@ -43,13 +43,6 @@ const ViewSearchProductsHook = () =>{
 
 
 
-
-
-
-
-
-
-
     return [AllProduct ,getProduct , results]
 }
 export default ViewSearchProductsHook 

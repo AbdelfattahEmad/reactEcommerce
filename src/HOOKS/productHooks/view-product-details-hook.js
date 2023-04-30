@@ -57,8 +57,5 @@ const ViewProductDetailssHook = (prodID , catID) =>{
      
 
     
-
-
-
 }
 export default ViewProductDetailssHook 

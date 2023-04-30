@@ -10,13 +10,10 @@ const ViewProductsHook = () =>{
         dispatch(getAllProduct())
     },[])
 
-    const AllProduct = useSelector((state)=> state.ProductReducer.allProducts) 
+
+    const AllProduct = useSelector((state)=> state.ProductReducer.getAllProducts) 
 
 
-
-     
-
-    
 
     return [AllProduct]
 

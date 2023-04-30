@@ -1,6 +1,6 @@
 import { insertData, put } from "../../HOOKS/insertData";
-import { CREATE_NEW_USER , GET_ERROR ,LOGIN_IN  , FORGET_PASSWORD , VERIFY_PASSWORD , RESET_PASSWORD , AUTO_LOGIN
-} from "../type/type";
+import { CREATE_NEW_USER , GET_ERROR ,LOGIN_IN  , FORGET_PASSWORD , VERIFY_PASSWORD ,
+     RESET_PASSWORD , AUTO_LOGIN ,UPDATE_USER_DATA} from "../type/type";
 
 
 
@@ -125,6 +125,28 @@ export  const autoLogin = () =>  async(dispatch) => {
         })
 }
 }
+
+
+
+//update userData 
+export  const UpdateUser = (body) =>  async(dispatch) => {
+    try {
+       const response = await put("/users/updateMe",body);
+     
+       dispatch({
+            type : UPDATE_USER_DATA,
+            payload : response,
+            loading : true 
+        })
+    } catch(err) {
+        dispatch({
+            type : UPDATE_USER_DATA ,
+            payload : err,
+            error : true,
+        })
+    }
+}
+
 
     
 

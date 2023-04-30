@@ -1,9 +1,5 @@
 import { Container} from "react-bootstrap";
 import ProductCard from "../Home/ProductCard";
-import jak from "../images/jak.webp"
-import dress from "../images/dress.webp" 
-import jac1 from "../images/jac1.webp"
-import jaket from "../images/jaket.jpg"
 import SubTitle from "../Home/subtitle";
 import ViewProductsHook from "../../HOOKS/productHooks/view-products-hook";
 
@@ -11,8 +7,8 @@ import ViewProductsHook from "../../HOOKS/productHooks/view-products-hook";
 
 function HomeProducts({items}){
 
-    const [allproduct] = ViewProductsHook()
-    console.log(allproduct)
+    const [Allproduct] = ViewProductsHook()
+    console.log(Allproduct)
 
     return(
 <div>
@@ -20,8 +16,8 @@ function HomeProducts({items}){
         <Container className="d-flex">
 
             {
-                allproduct ? (
-                    allproduct.map((items)=>{<ProductCard title={items.name} desc={items.descreption} img={items.image} price={items.price}/>
+                Allproduct?(
+                    Allproduct.map((items,index)=>{ return <ProductCard key={index} title={items.name} desc={items.descreption} img={items.image} price={items.price}/>
                 })
                 ) : <h2> No products </h2>
             }
