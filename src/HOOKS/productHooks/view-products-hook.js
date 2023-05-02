@@ -12,10 +12,17 @@ const ViewProductsHook = () =>{
 
 
     const AllProduct = useSelector((state)=> state.ProductReducer.getAllProducts) 
+    console.log(AllProduct)
 
 
+    let Data =[] 
+    if(AllProduct){
+        Data = AllProduct.slice(0,4)
+    }else{
+        Data = []
+    }
 
-    return [AllProduct]
+    return [Data]
 
 
 }

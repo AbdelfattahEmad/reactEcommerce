@@ -10,15 +10,15 @@ import ViewProductsHook from '../../HOOKS/productHooks/view-products-hook';
 
 function HeadHome() {
 
-const [AllProduct] = ViewProductsHook()
+const [Data] = ViewProductsHook()
 
   return (
     <div>
       <Slider/>
       <HomeCategory/>
-      <HomeProducts  products={AllProduct}  title='BestSeller' pathText="/allproduct" />
+      <HomeProducts  products={Data}  title='BestSeller' pathText="/allproduct" />
       <DiscountSection img={lap}/>
-      <HomeProducts products={AllProduct}  title='BestSeller' pathText="/allproduct"/>
+      <HomeProducts products={Data}  title='BestSeller' pathText="/allproduct"/>
       <BrandFeture/>
     </div>
   );

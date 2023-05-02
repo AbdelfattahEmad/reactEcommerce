@@ -31,7 +31,6 @@ const [user , setUser]=useState(null)
 
 
 let userData = useSelector((state)=>state.authReducer.user)
-console.log(userData)
 
 useEffect(()=>{
 setUser(userData?.data?.data)
@@ -74,7 +73,7 @@ const logOut =()=>{
                 </Dropdown.Toggle>
           
                 <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">personal page</Dropdown.Item>
+                  <Dropdown.Item href="/admin/Profile">personal page</Dropdown.Item>
                   <Dropdown.Item href="#/action-2" onClick={logOut}>logOut</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>

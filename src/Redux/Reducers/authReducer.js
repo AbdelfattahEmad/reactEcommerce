@@ -1,5 +1,5 @@
 import { CREATE_NEW_USER ,LOGIN_IN,GET_ERROR ,FORGET_PASSWORD ,VERIFY_PASSWORD  ,RESET_PASSWORD , AUTO_LOGIN , LOG_OUT , 
-UPDATE_USER_DATA
+UPDATE_USER_DATA ,CHANGE_PASSWORD
 } from "../type/type"
 
   const inital = {
@@ -9,7 +9,7 @@ UPDATE_USER_DATA
    verifyPassord:[],
    resetPassword : [],
    updateUserData :[],
-
+   changePassword :[],
    loading : true,
    error : false
 } 
@@ -33,8 +33,6 @@ const authReducer = ( state= inital , action) =>{
                 forgetPassord: action.payload , 
                 error:action.error
         }
-
-
         case VERIFY_PASSWORD :
             return {
                 ...state,
@@ -52,24 +50,35 @@ const authReducer = ( state= inital , action) =>{
             ...state,
             user: action.payload , 
             error:action.error
-    }
-    case  LOG_OUT :
+        }
+        case  LOG_OUT :
         return {
             ...state,
             user: action.payload , 
             error:action.error
-    }
-    case UPDATE_USER_DATA :
+        }
+        case UPDATE_USER_DATA :
         return {
             ...state,
             updateUserData : action.payload , 
             error:action.error
-    }
+        }
+        case CHANGE_PASSWORD :
+            return {
+                ...state,
+               changePassword : action.payload , 
+                error:action.error
+            }
+    
+
+
+        
         case GET_ERROR :
             return {
                 ...state,
                 error: action.payload
             }
+
 
         default :
             return state 

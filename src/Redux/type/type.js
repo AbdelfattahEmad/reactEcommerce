@@ -73,6 +73,11 @@ export const GET_ONE_ADRESS = "GET_ONE_ADRESS"
 export const UPDATE_USER_DATA = "UPDATE_USER_DATA"
 
 
+export const CHANGE_PASSWORD = "CHANGE_PASSWORD"
+
+
+
+
 
 
 

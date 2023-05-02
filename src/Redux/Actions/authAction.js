@@ -1,6 +1,6 @@
-import { insertData, put } from "../../HOOKS/insertData";
+import { insertData, insertUpdateData, put } from "../../HOOKS/insertData";
 import { CREATE_NEW_USER , GET_ERROR ,LOGIN_IN  , FORGET_PASSWORD , VERIFY_PASSWORD ,
-     RESET_PASSWORD , AUTO_LOGIN ,UPDATE_USER_DATA} from "../type/type";
+     RESET_PASSWORD , AUTO_LOGIN ,UPDATE_USER_DATA ,CHANGE_PASSWORD} from "../type/type";
 
 
 
@@ -131,8 +131,7 @@ export  const autoLogin = () =>  async(dispatch) => {
 //update userData 
 export  const UpdateUser = (body) =>  async(dispatch) => {
     try {
-       const response = await put("/users/updateMe",body);
-     
+       const response = await insertUpdateData(`users/updateMe`,body);
        dispatch({
             type : UPDATE_USER_DATA,
             payload : response,
@@ -146,6 +145,25 @@ export  const UpdateUser = (body) =>  async(dispatch) => {
         })
     }
 }
+
+//cahnge password 
+export  const ChangePassword = (body) =>  async(dispatch) => {
+    try {
+       const response = await insertUpdateData(`users/changeMyPassword`,body);
+       dispatch({
+            type : CHANGE_PASSWORD,
+            payload : response,
+            loading : true 
+        })
+    } catch(err) {
+        dispatch({
+            type : CHANGE_PASSWORD,
+            payload : err,
+            error : true,
+        })
+    }
+}
+
 
 
     

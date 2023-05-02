@@ -1,13 +1,11 @@
-import { getData, insertDataWithImg } from "../../HOOKS/insertData";
-import { CREATE_PRODUCT, GET_ERROR , GET_ALL_PRODUCT,GET_PRODUCT_DETAILS } from "../type/type";
+import { getData, insertDataWithImg   } from "../../HOOKS/insertData";
+import { CREATE_PRODUCT, GET_ERROR , GET_ALL_PRODUCT,GET_PRODUCT_DETAILS ,  } from "../type/type";
 
 
 // Get all Product
-export  const getAllProduct = (formData) => async(dispatch) => {
+export  const getAllProduct = () => async(dispatch) => {
     try {
        const response = await getData('products');
-       console.log(response)
-     
        dispatch({
             type :GET_ALL_PRODUCT,
             payload : response,

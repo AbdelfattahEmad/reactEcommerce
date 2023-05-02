@@ -4,21 +4,21 @@ import { Link } from 'react-router-dom';
 
 
 
-function ProductCard( {title , img , desc , price , items}){
+function ProductCard({item}){
   return (
 
 <Container className='my-4'>
 <Row>
 <Card style={{ width: '18rem' }}>
-  <Link to={`/products/${items._id}`} style={{textDecoration:"none"}}>
-      <Card.Img variant="top" src={items.image} />
+  <Link to={`/products/${item._id}`} style={{textDecoration:"none"}}>
+      <Card.Img variant="top" src={item.image} />
       </Link>
       <Card.Body>
-        <Card.Title>{items.title}</Card.Title>
+        <Card.Title>{item.title}</Card.Title>
         <Card.Text>
-            {items.desc}
+            {item.desc}
         </Card.Text>
-        <p>{items.price}</p>
+        <p>{item.price}</p>
       </Card.Body>
     </Card>
 

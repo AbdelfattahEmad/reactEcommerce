@@ -1,5 +1,5 @@
 import baseUrl from "../../Api/BaseUrl";
-import {GET_ERROR ,  CREATE_CATEGORY, GET_ALL_BRAND,CREATE_BRAND } from "../type/type";
+import {GET_ERROR , GET_ALL_BRAND,CREATE_BRAND } from "../type/type";
 import {insertDataWithImg} from "../../HOOKS/insertData";
 
 

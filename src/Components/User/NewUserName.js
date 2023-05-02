@@ -1,19 +1,20 @@
 
-import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import UpdateHook from '../../HOOKS/UserHooks/UpdateUserHook';
+import { ToastContainer } from 'react-toastify';
 
 const NewUserName=()=>{
-  const{user , show , handleClose , handleShow , handelSubmit , onChangeName , onChangeEmail, onChangePhone , name , email , phone } = UpdateHook()
+  const{user , show , handleClose , handleShow , handelSubmit , onChangeName , onChangeEmail, onChangePhone , name , email , phone,
+    oldPassoword ,onChangeOldPassword,Newpassoword ,onChangeNewPassword, confirmNewpassoword,onChangeConfirmPassord ,SaveChange  } = UpdateHook()
 
 
 
     return(
       <Container>
-        <h1>Personal data page</h1>
+        <h1>Personal  page</h1>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -40,7 +41,6 @@ const NewUserName=()=>{
                     <p>Name :<span>{user.name} </span></p>
                     <p>phone number:<span> {user.phone}</span> </p>
                     <p>Email:<span>{user.email}</span></p>
-
             </div>
 
             <div>
@@ -48,21 +48,27 @@ const NewUserName=()=>{
             </div>
             
 
-            
-        </div>
+              </div>
+
 
         <div>
           <h4 className='py-1'>Change password</h4>
+          
         <Form.Group className="mb-2" controlId="formBasicPassword">
         <Form.Label> </Form.Label>
-        <Form.Control type="password" placeholder="Enter New Password" />
+        <Form.Control value={oldPassoword} onChange={onChangeOldPassword} type="password" placeholder="Enter old Password" />
       </Form.Group>
+      
       <Form.Group className="mb-2" controlId="formBasicPassword">
+      <Form.Control value={Newpassoword} onChange={onChangeNewPassword} type="password" placeholder="Enter New Password" />
+
         <Form.Label></Form.Label>
-        <Form.Control type="password" placeholder="Confirm New Password" />
+        
+        <Form.Control value={confirmNewpassoword} onChange={onChangeConfirmPassord} type="password" placeholder="Confirm New Password" />
       </Form.Group>
         </div>
-        <div className='py-2'><Button  variant="success">Save password</Button>{' '}</div>
+        <div className='py-2'><Button onClick={SaveChange}  variant="success">Save password</Button>{' '}</div>
+        <ToastContainer/>
 
         </Container>
 

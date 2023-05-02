@@ -4,7 +4,7 @@ import { getAllAdress } from "../../Redux/Actions/UserAdressAction"
 import notify from '../CategoryHooks/UseNotifiction';
 
 
-const viewAdressHooks =()=> {
+const ViewAdressHooks =()=> {
 
     const dispatch = useDispatch()
 
@@ -45,4 +45,4 @@ const viewAdressHooks =()=> {
     return {getUser}
 
 }
-export default viewAdressHooks
+export default ViewAdressHooks
